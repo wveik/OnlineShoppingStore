@@ -22,7 +22,7 @@ namespace OnlineShoppingStore.Domain.Entities {
         }
 
         public void RemoveLine(Product product) {
-            lineCollection.RemoveAll(x => x.Product == product);
+            lineCollection.RemoveAll(x => x.Product.ProductId == product.ProductId);
         }
 
         public decimal ComputeTotalPrice() {

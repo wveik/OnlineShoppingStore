@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Online Shopping Store</title>
+    <title>@ViewBag.Title - Спортивный магазин</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-inverse" role="navigation">
-        <a class="navbar-brand" href="#">Online Shopping Store</a>
+        <a class="navbar-brand" href="#">Спортивный магазин</a>
+        @Html.Action("Summary", "Cart")
     </div>
     <div class="row panel">
         <div id="categoris" class="col-lg-3">

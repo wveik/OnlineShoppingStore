@@ -1,16 +1,22 @@
 ﻿@model OnlineShoppingStore.WebUI.Models.CartIndexViewModel
 
+<style>
+    #cartTable td {
+        vertical-align:middle;
+    }
+</style>
 @{
     ViewBag.Title = "Спортивный магазин: Ваша корзина";
 }
 <h2>Your cart</h2>
-<table class="table">
+<table id="cartTable" class="table">
     <thead>
         <tr>
             <th>Количество</th>
             <th>Товар</th>
             <th class="text-right">Цена</th>
             <th class="text-right">Промежуточный итог</th>
+            <th class="text-right">Удалить</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +29,14 @@
                 </td>
                 <td class="text-right">
                     @((line.Quantity * line.Product.Price).ToString("c"))
+                </td>
+                <td class="text-right">
+                    @using (Html.BeginForm("RemoveFromCart", "Cart")) {
+                        @Html.Hidden("ProductId", line.Product.ProductId)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-sm btn-warning"
+                               type="submit" value="Удалить" />
+                    }
                 </td>
             </tr>
         }
@@ -40,4 +54,5 @@
     <a class="btn btn-primary" href="@Model.ReturnUrl">
         Вернуться в магазин
     </a>
+    @Html.ActionLink("Checkout now", "Checkout", null, new { @class = "btn btn-primary" })
 </div>

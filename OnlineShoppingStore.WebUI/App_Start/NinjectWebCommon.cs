@@ -67,6 +67,7 @@ namespace OnlineShoppingStore.WebUI.App_Start {
             //kernel.Bind<IProductRepository>().ToConstant(mock.Object);
 
             kernel.Bind<IProductRepository>().To<EFProductRepository>();
+            kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>();
         }
     }
 }
