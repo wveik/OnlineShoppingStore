@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace OnlineShoppingStore.Domain.Concrete {
     public class EmailSettings {
-        public string MailToAddress = "kataev_06@list.ru";
-        public string MailFromAddress = "kataev_06@list.ru";
+        public string MailToAddress = "test@list.ru";
+        public string MailFromAddress = "test@list.ru";
         public bool UseSsl  = true;
         public string ServerName = "mail.ru";
         public int ServerPort = 587;
-        public string UserName ="kataev_06@list.ru";
+        public string UserName = "test@list.ru";
         public string Password = "test";
     }
 }
