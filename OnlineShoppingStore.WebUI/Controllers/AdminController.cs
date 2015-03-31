@@ -14,7 +14,7 @@ namespace OnlineShoppingStore.WebUI.Controllers {
         public IProductRepository _repository { get; set; }
 
         public ActionResult Index() {
-            return View(_repository.Products);
+            return View(_repository.Products); 
         }
         
         [HttpGet]
