@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace OnlineShoppingStore.WebUI.Controllers {
+    [Authorize]
     public class AdminController : Controller {
         [Inject]
         public IProductRepository _repository { get; set; }
